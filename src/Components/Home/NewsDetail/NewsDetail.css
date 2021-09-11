@@ -1,0 +1,7 @@
+.detailNews{
+    padding: 10px;
+}
+.img {
+    display: flex;
+    justify-content: center;
+}
