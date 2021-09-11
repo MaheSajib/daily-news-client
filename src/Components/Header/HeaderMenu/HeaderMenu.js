@@ -27,6 +27,7 @@ const HeaderMenu = () => {
                             <Nav.Link onClick={()=>setCategory('Coronavirus')} href="#link">Coronavirus</Nav.Link>
                             <Nav.Link onClick={()=>setCategory('Bangladesh')} href="#link">Bangladesh</Nav.Link>
                             <Nav.Link onClick={()=>setCategory('Sports')} href="#link">Sports</Nav.Link>
+                            <Nav.Link className="text-danger" href="/dashboard">Login</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

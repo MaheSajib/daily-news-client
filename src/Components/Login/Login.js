@@ -27,10 +27,10 @@ const Login = () => {
         photo: ''
     });
 
-    const [loggedInUser, setLoggedInUser ] = useContext(UserContext);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const location = useLocation();
-    let { from } = location.state || { from: { pathname: "/" } };
+    let { from } = location.state || { from: { pathname: "/dashboard" } };
 
     const [isNewUser, setIsNewUser] = useState(false);
     const { register, handleSubmit } = useForm();
@@ -45,7 +45,7 @@ const Login = () => {
 
     const onSubmit = data => {
         if (isNewUser && data.Email && data.Password) {
-            console.log(isNewUser);
+            console.log(data);
             firebase.auth().createUserWithEmailAndPassword(data.Email, data.Password)
                 .then(userCredential => {
                     const newUserInfo = userCredential.user;
@@ -106,7 +106,7 @@ const Login = () => {
     }
 
 
-    
+
 
 
 
@@ -124,10 +124,10 @@ const Login = () => {
                     <br />
                     <input className="form-control" placeholder="Email" {...register("email")} required />
                     <br />
-                    <input className="form-control" placeholder="Password"  type="password" {...register("password", { required: true }) } />
+                    <input className="form-control" placeholder="Password" type="password" {...register("password", { required: true })} />
                     <br />
                     {
-                        isNewUser && <input className="form-control" placeholder="Confirm Password" type="password" required name="" {...register("confirmPassword", { required: true }) } />
+                        isNewUser && <input className="form-control" placeholder="Confirm Password" type="password" required name="" {...register("confirmPassword", { required: true })} />
                     }
                     <br />
                     <br />
