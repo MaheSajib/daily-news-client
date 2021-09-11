@@ -6,7 +6,7 @@ const HeaderMenu = () => {
 
     const [category, setCategory] = useState('')
 
-    fetch(`http://localhost:5500/category?category=${category}`)
+    fetch(`https://infinite-sands-56335.herokuapp.com/category?category=${category}`)
     .then(res=> res.json())
     .then(data => console.log(data))
 

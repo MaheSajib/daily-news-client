@@ -5,7 +5,7 @@ const NewsList = () => {
     const [list, setList] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5500/newsList')
+        fetch('https://infinite-sands-56335.herokuapp.com/newsList')
         .then(res => res.json())
         .then(data => setList(data))
 
@@ -13,7 +13,7 @@ const NewsList = () => {
 
     const handleStatus = (event, id) => {
         const status = event.target.value;
-        const url = `http://localhost:5500/newsList/processStatus?status=${status}&id=${id}`;
+        const url = `https://infinite-sands-56335.herokuapp.com/newsList/processStatus?status=${status}&id=${id}`;
         fetch(url , {
             method: 'PATCH'
         })

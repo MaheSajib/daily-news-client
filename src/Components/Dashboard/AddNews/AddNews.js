@@ -15,7 +15,7 @@ const AddNews = () => {
             category: data.category,
             imageURL: imageURL
         };
-        const url = `http://localhost:5500/addNews`
+        const url = `https://infinite-sands-56335.herokuapp.com/addNews`
 
         fetch(url, {
             method: 'POST',

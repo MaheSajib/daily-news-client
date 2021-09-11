@@ -6,7 +6,7 @@ const Category = () => {
     const [newsData, setNewsData] = useState('');
 
     useEffect(()=>{
-        fetch('http://localhost:5500/news')
+        fetch('https://infinite-sands-56335.herokuapp.com/news')
         .then(res => res.json())
         .then(data => setNewsData(data))
     }, [])
